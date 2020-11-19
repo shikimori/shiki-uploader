@@ -5,13 +5,14 @@
   "main": "src/shiki_uploader.js",
   "author": "morr",
   "license": "MIT",
-  "homepage": "https://github.com/shikimori/shiki-packages/tree/master/packages/shiki-uploader",
+  "homepage": "https://github.com/shikimori/shiki-uploader",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shikimori/shiki-uploader.git"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "release-it"
   },
   "dependencies": {
     "@uppy/core": "^1.11.0",
@@ -43,6 +44,11 @@
     "plugins": {
       "autoprefixer": {},
       "postcss-easings": {}
+    }
+  },
+  "release-it": {
+    "github": {
+      "release": true
     }
   }
 }

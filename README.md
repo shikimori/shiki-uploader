@@ -41,3 +41,10 @@ const defaultOptions = {
 `upload-error`
 `complete`
 `restriction-failed`
+
+
+####
+Package release command
+```sh
+GITHUB_TOKEN=... npm run release
+```
