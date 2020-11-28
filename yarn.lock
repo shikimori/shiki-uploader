@@ -5017,6 +5017,11 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+uevent@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/uevent/-/uevent-2.0.0.tgz#83d3a27dc746f0e0c98db3ca1c850ffe4aef4993"
+  integrity sha512-UWXwwdYnrc/q2AibFqZpq77aKl+uOQdmAZ4SZf4B8kG1Y3eDFGiYqfZ4kaiQZ3jxZDX8XgDm84AAcIWeGu63Zw==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
