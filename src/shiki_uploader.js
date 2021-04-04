@@ -1,9 +1,6 @@
 import isVisible from 'is-visible';
 import uEvent from 'uevent';
 
-import Uppy from '@uppy/core';
-import XHRUpload from '@uppy/xhr-upload';
-
 import { flash } from 'shiki-utils';
 import { chain, bind } from 'shiki-decorators';
 
@@ -14,6 +11,9 @@ import ruLocale from './locale/ru';
 const I18N_KEY = 'frontend.lib.file_uploader';
 
 export default class ShikiUploader {
+  node = null
+  uppy = null
+
   uploadIDs = []
   docLeaveTimer = null
   progressNode = null
@@ -41,8 +41,6 @@ export default class ShikiUploader {
     );
 
     uEvent.mixin(this);
-    this.node = null;
-    this.uppy = this._initUppy();
 
     if (options.node) {
       this.attachTo(options);
@@ -111,7 +109,11 @@ export default class ShikiUploader {
     ), 0);
   }
 
-  addFiles(files) {
+  async addFiles(files) {
+    if (!this.uppy) {
+      this.uppy = await this._initUppy();
+    }
+
     Array
       .from(files)
       .slice(0, this.maxNumberOfFiles + 1)
@@ -151,7 +153,14 @@ export default class ShikiUploader {
     this.node.removeEventListener('paste', this._paste);
   }
 
-  _initUppy() {
+  async _initUppy() {
+    const { default: Uppy } = await import(
+      /* webpackChunkName: "uppy" */ '@uppy/core'
+    );
+    const { default: XHRUpload } = await import(
+      /* webpackChunkName: "uppy" */ '@uppy/xhr-upload'
+    );
+
     return Uppy({
       // id: 'uppy',
       autoProceed: true,
