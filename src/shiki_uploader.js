@@ -34,11 +34,8 @@ export default class ShikiUploader {
   }
 
   constructor(options) {
-    Object.assign(
-      this,
-      this.defaultOptions,
-      options
-    );
+    Object.assign(this, this.defaultOptions, options);
+    this.node = null; // have to reset this.node because of Object.assign above
 
     uEvent.mixin(this);
 
@@ -50,7 +47,7 @@ export default class ShikiUploader {
   @chain
   attachTo({ node, progressContainerNode }) {
     if (this.node) {
-      throw new Error('ShikiUploader is already attached', 'file_uploader');
+      throw new Error(`${this.constructor.name} is already attached`);
     }
 
     this.node = node;
