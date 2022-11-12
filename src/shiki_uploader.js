@@ -31,6 +31,7 @@ export default class ShikiUploader {
     xhrHeaders: () => ({}),
     xhrFieldName: 'image',
     maxNumberOfFiles: 150,
+    maxFileSize: 1024 * 1024 * 4,
     isResetAfterUpload: true
   }
 
@@ -165,7 +166,7 @@ export default class ShikiUploader {
       allowMultipleUploads: true,
       // debug: true,
       restrictions: {
-        maxFileSize: 1024 * 1024 * 4,
+        maxFileSize: this.maxFileSize,
         maxNumberOfFiles: this.maxNumberOfFiles,
         minNumberOfFiles: null,
         allowedFileTypes: ['image/jpg', 'image/jpeg', 'image/png']
