@@ -25,6 +25,7 @@ export default class ShikiUploader {
   defaultOptions = {
     node: null,
     progressContainerNode: null,
+    autoProceed: true,
     locale: null,
     xhrEndpoint: null,
     xhrHeaders: () => ({}),
@@ -160,7 +161,7 @@ export default class ShikiUploader {
 
     return Uppy({
       // id: 'uppy',
-      autoProceed: true,
+      autoProceed: this.autoProceed,
       allowMultipleUploads: true,
       // debug: true,
       restrictions: {
