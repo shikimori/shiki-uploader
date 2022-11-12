@@ -28,18 +28,18 @@
     "@babel/preset-env": "^7.7.4",
     "babel-eslint": "11.0.0-beta.2",
     "babel-loader": "^8.1.0",
-    "uevent": "^2.0.0",
     "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^6.2.2",
-    "release-it": "^14.2.1"
+    "release-it": "^14.2.1",
+    "uevent": "^2.0.0"
   },
   "peerDependencies": {
-    "uevent": "^2.0.0",
+    "shiki-decorators": "^1.0.0",
     "shiki-utils": "^1.0.0",
-    "shiki-decorators": "^1.0.0"
+    "uevent": "^2.0.0"
   },
   "postcss": {
     "plugins": {
