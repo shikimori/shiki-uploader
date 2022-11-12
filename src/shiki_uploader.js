@@ -195,7 +195,11 @@ export default class ShikiUploader {
 
     const height = this.node.offsetHeight;
     const width = this.node.offsetWidth;
-    const text = window.I18n.t(`${I18N_KEY}.drop_pictures_here`);
+    const text = window.I18n.t(
+      this.maxNumberOfFiles === 1 ?
+        `${I18N_KEY}.drop_picture_here` :
+        `${I18N_KEY}.drop_pictures_here`
+    );
 
     this.dropNode = document.createElement('div');
     this.dropNode.classList.add('shiki-file_uploader-drop_placeholder');
